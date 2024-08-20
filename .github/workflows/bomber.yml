@@ -1,0 +1,38 @@
+name: SMS BOMBER - Ravan3
+
+on:
+  workflow_dispatch:
+    inputs:
+      phone_number:
+        description: 'Phone number to send SMS'
+        default: '1234567890'
+        required: true
+        type: string
+      sms_count:
+        description: 'Number of SMS to send'
+        default: '1'
+        required: true
+        type: string
+
+jobs:
+  update-and-run:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        submodules: 'true'
+        fetch-depth: 1    
+
+    - name: Update system
+      run: sudo apt remove firefox && sudo apt update && sudo apt upgrade -y 
+
+    - name: Install Python3 and prepare for bombing
+      run: |
+        sudo apt install python3 -y
+        chmod +x Ravan3.py
+
+    - name: Run SMS Bomber on victim
+      run: |
+        echo -e "${{ inputs.phone_number }}\n${{ inputs.sms_count }}" | python3 Ravan3.py
