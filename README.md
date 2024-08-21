@@ -31,6 +31,15 @@
 apt install git p && git clone https://github.com/shubhushubhu99/Ravan.git && cd Ravan && Ravan.sh 
 ```
 
+### Run on Git Actions (by @mizdrake7)
+```
+- Star & Fork The Repo
+- Enable Workflows from Actions tab in Repo
+- Select Job
+- Enter Phone Number & Bomb Amount 
+- Have Fun
+```
+
 ### Features:
 1. Unlimted Otp Bombing
 2. Bombing with tor (full safety)
