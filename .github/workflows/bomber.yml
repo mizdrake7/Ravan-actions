@@ -15,7 +15,7 @@ on:
         type: string
 
 jobs:
-  update-and-run:
+  sms-bomber:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,9 +24,6 @@ jobs:
       with:
         submodules: 'true'
         fetch-depth: 1    
-
-    - name: Update system
-      run: sudo apt remove firefox && sudo apt update && sudo apt upgrade -y 
 
     - name: Install Python3 and prepare for bombing
       run: |
